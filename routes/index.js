@@ -18,4 +18,13 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' , messages: messages});
 });
 
+router.get('/new', function(req, res, next){
+  res.render('forms', {title: 'New Message', })
+})
+
+router.post('/new', function(req, res){
+  const messageText = req.body.message;
+  const messageAuthor = req.body.author;
+})
+
 module.exports = router;
