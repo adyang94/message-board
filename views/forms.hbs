@@ -1,11 +1,15 @@
-<div class="newMessageCtn">
-  <form action="post" class="newMessageForm" action="/new">
-    <div class="newMessage">
-      <input type="text" name="message">
-    </div>
-    <div class="newMessageAuthor">
-      <input type="text" name="author">
-    </div>
-    <button class="messageSubmit" >Submit!</button>
-  </form>
+<div>
+  <h2 class="title">Add a message</h2>
+  
+  <form method="POST" action="/new">
+    <input class="input" name="author" type="text" placeholder="Author" required>
+    <br>
+    <br>
+    <textarea class="textarea" name="message" placeholder="Add a your message..." required></textarea>
+    <br>
+    <br>
+    <button class="button is-info">Submit</button>
+    <div class="level-item">
+      <a href="/" class="button">Go back</a>
+    </div>            
 </div>
