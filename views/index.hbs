@@ -1,23 +1,30 @@
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Message Board</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-</head>
-<body>
-  <div class="container">
-    {{!-- href or anchor tag: new message page --}}
-    
-    {{#each messages}}
-      <div>{{text}}</div>
-      <br>
-      <div>{{user}} | {{added}}</div>
-      <br>
-      <br>
-    {{/each}}
+<div class="container">
+  <div class="is-flex my-5">
+    <a href="/new" class="button is-success">
+      <span>Add a message</span>
+      <span class="icon is-small">
+        <i class="fas fa-comment-medical"></i>
+      </span>
+    </a>
   </div>
-  
-</body>
-</html>
+  {{#each messages}}
+    <article class="media">
+      <div class="media-content">
+        <div class="content">
+          <p>
+            <strong>{{user}}</strong>
+            <br>
+            {{text}}
+          </p>
+        </div>
+        <nav class="level is-mobile">
+          <div class="level-left">
+            <div class="level-item">
+              <small>{{added}}</small>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </article>
+  {{/each}}
+</div>
